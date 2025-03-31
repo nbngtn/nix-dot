@@ -95,7 +95,7 @@
   	type = "fcitx5";
 	enable = true;
 	fcitx5.addons = with pkgs; [ 
-		kdePackages.fcitx5-with-addons
+		kdePackages.fcitx5-qt
 		fcitx5-gtk 
 		kdePackages.fcitx5-unikey
 		];
