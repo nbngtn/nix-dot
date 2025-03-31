@@ -92,8 +92,13 @@
 
   # FCITX5
   i18n.inputMethod = {
-  	type = "fcitx5"; 
-	# fcitx5.addons = with pkgs; [ fcitx5-gtk fcitx5-unikey];
+  	type = "fcitx5";
+	enable = true;
+	fcitx5.addons = with pkgs; [ 
+		kdePackages.fcitx5-with-addons
+		fcitx5-gtk 
+		kdePackages.fcitx5-unikey
+		];
 	fcitx5.waylandFrontend = true;
   };
 
@@ -133,8 +138,6 @@
     packages = with pkgs; [
       kdePackages.kate
       caprine
-        
-      
     ];
   };
 
@@ -162,9 +165,6 @@
     fastfetch
     docker
     devpod-desktop
-    kdePackages.fcitx5-with-addons
-    # kdePackages.fcitx5-configtool
-    kdePackages.fcitx5-unikey
     wl-clipboard 
   ];
 
