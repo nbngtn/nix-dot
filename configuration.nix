@@ -142,6 +142,7 @@
       kdePackages.kate
       caprine
       obsidian
+      linuxKernel.packages.linux_6_14.cpupower
     ];
   };
 
