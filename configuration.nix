@@ -144,6 +144,7 @@
       obsidian
       linuxKernel.packages.linux_6_14.cpupower
       libreoffice-qt-fresh
+      telegram-desktop
     ];
   };
 
