@@ -67,13 +67,17 @@
 
   # ASUSCTL
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  services.supergfxd.enable = true;
+  # services.supergfxd.enable = true;
   services = {
     asusd = {
       enable = true;
       enableUserService = true;
     };
+  #  supergfxd = {
+  #    enable = true;
+  #  };
   };
+  # systemd.services.supergfxd.path = [ pkgs.pciutils ];
 
 
   # FLATPAK
@@ -137,7 +141,7 @@
   users.users.lembea = {
     isNormalUser = true;
     description = "Nghia Bui";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "video" "render"];
     packages = with pkgs; [
       kdePackages.kate
       caprine
@@ -174,7 +178,15 @@
     devpod-desktop
     wl-clipboard
     lm_sensors
+    libva-utils
   ];
+ 
+    hardware.graphics= {
+    enable = true;
+    extraPackages = with pkgs; [
+      vdpauinfo   # VDPAU utilities
+    ];
+  };
 
   # Automatic Update
   system.autoUpgrade.enable = true;
